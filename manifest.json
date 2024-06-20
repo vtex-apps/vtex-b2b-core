@@ -14,11 +14,10 @@
     "docs": "0.x"
   },
   "policies": [],
-  "settingsSchema":{
+  "settingsSchema": {
     "title": "B2B Core Admin",
     "type": "object",
-    "properties": {
-    }
+    "properties": {}
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

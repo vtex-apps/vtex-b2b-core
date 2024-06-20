@@ -5,6 +5,5 @@
   "minReplicas": 1,
   "maxReplicas": 1,
   "workers": 1,
-  "routes": {
-  }
+  "routes": {}
 }

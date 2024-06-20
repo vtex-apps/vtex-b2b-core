@@ -1,0 +1,10 @@
+{
+  "name": "B2B Core",
+  "headline": "B2B Core",
+  "overview": "B2B Core",
+  "features": ["B2B Core"],
+  "websiteURL": "https://vtex.com/",
+  "support": {
+    "url": "https://support.vtex.com/hc/requests"
+  }
+}

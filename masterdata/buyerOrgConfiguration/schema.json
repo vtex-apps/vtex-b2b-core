@@ -19,8 +19,6 @@
       "title": "Categories"
     }
   },
-  "v-indexed": [
-    "customerId"
-  ],
+  "v-indexed": ["customerId"],
   "v-cache": false
 }
