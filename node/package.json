@@ -1,0 +1,19 @@
+{
+  "name": "vtex.b2b-core",
+  "version": "1.40.6",
+  "dependencies": {
+    "@vtex/api": "6.46.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.0",
+    "@vtex/api": "6.46.1",
+    "@vtex/prettier-config": "^0.3.1",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-vtex": "^2.1.0",
+    "typescript": "3.9.7"
+  },
+  "scripts": {
+    "lint": "tsc --noEmit && tslint -c tslint.json './**/*.ts'"
+  }
+}

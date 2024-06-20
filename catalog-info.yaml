@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: b2b-core
+  annotations:
+    github.com/project-slug: vtex-apps/vtex-b2b-core
+spec:
+  system: buyer-organization
+  type: backend-api
+  lifecycle: maintenance
+  owner: b-2-b-enabler
