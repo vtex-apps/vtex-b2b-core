@@ -1,9 +1,5 @@
 {
   "properties": {
-    "customerId": {
-      "type": "string",
-      "title": "Customer Id"
-    },
     "sellers": {
       "type": "array",
       "items": {
@@ -17,8 +13,15 @@
         "type": "string"
       },
       "title": "Categories"
+    },
+    "tradePolicies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "TradePolicies"
     }
   },
-  "v-indexed": ["customerId"],
+  "v-indexed": ["id"],
   "v-cache": false
 }
