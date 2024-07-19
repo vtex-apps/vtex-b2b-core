@@ -1,7 +1,7 @@
 {
   "name": "b2b-core",
   "vendor": "vtex",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "title": "B2B Core Admin",
   "description": "App to configure B2B entity in MasterData",
   "scripts": {
