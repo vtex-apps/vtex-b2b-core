@@ -1,23 +1,33 @@
 {
   "name": "b2b-core",
   "vendor": "vtex",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "title": "B2B Core Admin",
   "description": "App to configure B2B entity in MasterData",
   "scripts": {
-    "postreleasy": "vtex publish"
+    "prereleasy": "bash lint.sh"
   },
+  "categories": [],
   "dependencies": {},
   "builders": {
-    "masterdata": "2.x",
+    "masterdata": "1.x",
     "node": "6.x",
     "docs": "0.x"
   },
-  "policies": [],
-  "settingsSchema": {
-    "title": "B2B Core Admin",
-    "type": "object",
-    "properties": {}
-  },
+  "policies": [
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "httpstat.us",
+        "path": "*"
+      }
+    },
+    {
+      "name": "colossus-fire-event"
+    },
+    {
+      "name": "colossus-write-logs"
+    }
+  ],
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

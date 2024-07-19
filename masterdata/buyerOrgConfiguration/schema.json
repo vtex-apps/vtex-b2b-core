@@ -1,4 +1,5 @@
 {
+  "title": "buyerOrgConfiguration",
   "properties": {
     "sellers": {
       "type": "array",
@@ -20,6 +21,10 @@
         "type": "string"
       },
       "title": "TradePolicies"
+    },
+    "canEditAddress": {
+      "type": "boolean",
+      "title": "CanEditAddress"
     }
   },
   "v-indexed": ["id"],
