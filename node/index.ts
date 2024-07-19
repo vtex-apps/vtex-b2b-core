@@ -1,30 +1,42 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import type {
-  ParamsContext,
-  RecorderState,
-  IOClients,
-  IOContext,
-  SegmentData,
-} from '@vtex/api'
-import { Service } from '@vtex/api'
+import type { ClientsConfig, ServiceContext, RecorderState } from '@vtex/api'
+import { LRUCache, method, Service } from '@vtex/api'
+
+import { Clients } from './clients'
+import { status } from './middlewares/status'
+import { validate } from './middlewares/validate'
+
+const TIMEOUT_MS = 800
+
+const memoryCache = new LRUCache<string, any>({ max: 5000 })
+
+metrics.trackCache('status', memoryCache)
+
+const clients: ClientsConfig<Clients> = {
+  implementation: Clients,
+  options: {
+    default: {
+      retries: 2,
+      timeout: TIMEOUT_MS,
+    },
+    status: {
+      memoryCache,
+    },
+  },
+}
 
 declare global {
-  interface CustomIOContext extends IOContext {
-    currentProfile: CurrentProfile
-    segment?: SegmentData
-    orderFormId?: string
-  }
+  type Context = ServiceContext<Clients, State>
 
-  interface CurrentProfile {
-    email: string
-    userId: string
-  }
-
-  interface State {
+  interface State extends RecorderState {
     code: number
   }
 }
 
-export default new Service<IOClients, RecorderState, ParamsContext>({
-  routes: {},
+export default new Service({
+  clients,
+  routes: {
+    status: method({
+      GET: [validate, status],
+    }),
+  },
 })
