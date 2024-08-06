@@ -1,6 +1,10 @@
 {
   "title": "buyerOrgConfiguration",
   "properties": {
+    "customerId": {
+      "type": "string",
+      "title": "CustomerId"
+    },
     "sellers": {
       "type": "array",
       "items": {
@@ -27,6 +31,8 @@
       "title": "CanEditAddress"
     }
   },
-  "v-indexed": ["id"],
-  "v-cache": false
+  "v-indexed": ["id", "customerId"],
+  "v-cache": false,
+  "v-immediate-indexing": true,
+  "v-unique": ["customerId"]
 }
