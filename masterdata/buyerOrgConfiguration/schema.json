@@ -8,12 +8,12 @@
       },
       "title": "Sellers"
     },
-    "categories": {
+    "accessControlList": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "title": "Categories"
+      "title": "AccessControlList"
     },
     "tradePolicies": {
       "type": "array",
