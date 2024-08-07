@@ -15,12 +15,9 @@
       },
       "title": "AccessControlList"
     },
-    "tradePolicies": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "title": "TradePolicies"
+    "tradePolicy": {
+      "type": "string",
+      "title": "TradePolicy"
     },
     "canEditAddress": {
       "type": "boolean",
